@@ -1,0 +1,18 @@
+{
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "laravel/pint": "^1.29"
+    },
+    "scripts": {
+        "test": [
+            "@format",
+            "@static"
+        ],
+        "static": [
+            "./vendor/bin/phpstan analyse -c phpstan.neon"
+        ],
+        "format": [
+            "./vendor/bin/pint ../public --preset psr12"
+        ]
+    }
+}

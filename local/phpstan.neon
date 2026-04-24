@@ -1,0 +1,7 @@
+# https://phpstan.org/documentation
+parameters:
+    level: 8
+    paths:
+        - ../public/wp-config.php
+        - ../public/wp-content/themes/
+        - ../public/wp-content/plugins/

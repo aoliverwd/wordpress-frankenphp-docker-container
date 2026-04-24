@@ -1,0 +1,44 @@
+{
+	skip_install_trust
+
+	{$CADDY_GLOBAL_OPTIONS}
+
+	frankenphp {
+		{$FRANKENPHP_CONFIG}
+	}
+}
+
+{$CADDY_EXTRA_CONFIG}
+
+{$SERVER_NAME:localhost} {
+	root {$SERVER_ROOT:public/}
+	encode zstd br gzip
+
+	header {
+        X-XSS-Protection "0" always;
+        X-Frame-Options "DENY" always;
+        X-Content-Type-Options "nosniff" always;
+        Referrer-Policy "strict-origin-when-cross-origin" always;
+        Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+        Permissions-Policy "camera=(), microphone=(), geolocation=(), fullscreen=(self), payment=(), usb=()" always;
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+    }
+
+   	log {
+		output file /var/log/caddy-access.log {
+    		roll_at 00:00
+    		roll_size 100mb
+    		roll_keep 5
+		}
+	}
+
+    {$CADDY_SERVER_EXTRA_DIRECTIVES}
+
+    mercure {
+        anonymous
+    }
+
+    php_server {
+        hot_reload public/**/*{.php,.js} public/**/*.tpl
+    }
+}

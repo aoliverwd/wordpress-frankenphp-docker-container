@@ -1,0 +1,18 @@
+.DS_Store
+
+# Ignore environment variables
+.env
+
+# Do not commit database files
+public/wp-content/database/.ht.sqlite
+
+# Ignore log files
+log/*.log
+
+# Ignore vendor directories
+local/vendor
+dependancies/vendor
+
+# Ignore uploads directory
+public/wp-content/uploads/*
+!public/wp-content/uploads/.gitkeep

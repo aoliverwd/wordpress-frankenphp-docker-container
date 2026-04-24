@@ -1,0 +1,30 @@
+{
+    "config": {
+        "platform": {
+            "php": "8.5.5"
+        },
+        "allow-plugins": true
+    },
+    "require": {
+        "php": ">=8.5",
+        "composer/installers": "^2.3",
+        "wp-plugin/sqlite-database-integration": "^2.2"
+    },
+    "repositories": [
+        {
+            "name": "wp-packages",
+            "type": "composer",
+            "url": "https://repo.wp-packages.org"
+        }
+    ],
+    "extra": {
+        "installer-paths": {
+            "wp-content/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "wp-content/mu-plugins/{$name}/": [
+                "type:wordpress-muplugin"
+            ]
+        }
+    }
+}

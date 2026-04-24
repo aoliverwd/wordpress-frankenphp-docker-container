@@ -1,0 +1,17 @@
+name: wordpress-frankenphp
+
+services:
+    wordpress:
+        env_file: ".env"
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./public/wp-config.php:/app/public/wp-config.php:ro
+            - ./public/wp-content/db.php:/app/public/wp-content/db.php:ro
+            - ./public/wp-content/database:/app/public/wp-content/database
+            - ./public/wp-content/uploads:/app/public/wp-content/uploads
+            - ./log:/var/log

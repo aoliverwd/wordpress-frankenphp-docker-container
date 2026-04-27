@@ -11,6 +11,14 @@
 {$CADDY_EXTRA_CONFIG}
 
 {$SERVER_NAME:localhost} {
+    @blocked {
+        path /xmlrpc.php
+    }
+    handle @blocked {
+        respond "Access denied" 403
+    }
+
+
 	root {$SERVER_ROOT:public/}
 	encode zstd br gzip
 

@@ -2,7 +2,7 @@
 FROM composer:2 as composer
 WORKDIR /app/dependancies
 COPY ./dependancies /app/dependancies
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 # From WordPress core
 FROM wordpress:6.9.4-php8.5-fpm-alpine AS wp-core

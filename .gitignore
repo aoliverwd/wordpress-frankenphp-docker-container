@@ -11,8 +11,8 @@ log/*.log
 
 # Ignore vendor directories
 local/vendor
-dependancies/vendor
-dependancies/wp-content
+build-dependancies/vendor
+build-dependancies/wp-content
 
 # Ignore uploads directory
 public/wp-content/uploads/*

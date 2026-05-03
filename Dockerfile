@@ -1,7 +1,7 @@
 # Run composer to install dependencies
 FROM composer:2 as composer
-WORKDIR /app/dependancies
-COPY ./dependancies /app/dependancies
+WORKDIR /app/build-dependancies
+COPY ./build-dependancies /app/build-dependancies
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 # From WordPress core
@@ -23,15 +23,15 @@ RUN install-php-extensions \
 
 # Copy dependencies
 COPY --from=wp-core /usr/src/wordpress /app/public
-COPY --from=composer /app/dependancies /app/dependancies
-COPY --from=composer /app/dependancies/wp-content/plugins /app/public/wp-content/plugins
+COPY --from=composer /app/build-dependancies /app/build-dependancies
+COPY --from=composer /app/build-dependancies/wp-content/plugins /app/public/wp-content/plugins
 
 # Copy Caddyfile and php.ini
 COPY ./config/Caddyfile /etc/frankenphp/Caddyfile
 COPY ./config/php.ini /usr/local/etc/php/php.ini
 
 # Tidy up
-RUN rm -rf /app/dependancies/wp-content \
+RUN rm -rf /app/build-dependancies/wp-content \
     && rm -rf /app/public/wp-content/themes/twentytwentyfour \
     && rm -rf /app/public/wp-content/themes/twentytwentythree \
     && rm -rf /app/public/wp-content/plugins/akismet \

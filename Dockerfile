@@ -5,13 +5,10 @@ COPY ./build-dependancies /app/build-dependancies
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 # From WordPress core
-FROM wordpress:6.9.4-php8.5-fpm-alpine AS wp-core
+FROM wordpress:7.0-php8.5-fpm-alpine AS wp-core
 
 # Use dunglas/frankenphp as the base image
 FROM dunglas/frankenphp:1.12.2-php8-alpine
-
-ENV WORDPRESS_TARGET_DIR="/app/public"
-ENV SQLITE_DIR="${WORDPRESS_TARGET_DIR}/wp-content/mu-plugins/sqlite-database-integration"
 
 # add additional extensions here:
 RUN install-php-extensions \
@@ -29,6 +26,9 @@ COPY --from=composer /app/build-dependancies/wp-content/plugins /app/public/wp-c
 # Copy Caddyfile and php.ini
 COPY ./config/Caddyfile /etc/frankenphp/Caddyfile
 COPY ./config/php.ini /usr/local/etc/php/php.ini
+
+ENV WORDPRESS_TARGET_DIR="/app/public"
+ENV SQLITE_DIR="${WORDPRESS_TARGET_DIR}/wp-content/mu-plugins/sqlite-database-integration"
 
 # Tidy up
 RUN rm -rf /app/build-dependancies/wp-content \

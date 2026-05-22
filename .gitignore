@@ -15,5 +15,9 @@ build-dependancies/vendor
 build-dependancies/wp-content
 
 # Ignore uploads directory
+public/wp-content/plugins/*
+public/wp-content/themes/*
 public/wp-content/uploads/*
+!public/wp-content/plugins/.gitkeep
+!public/wp-content/themes/.gitkeep
 !public/wp-content/uploads/.gitkeep

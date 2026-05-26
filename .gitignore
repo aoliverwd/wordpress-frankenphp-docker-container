@@ -7,7 +7,8 @@
 public/wp-content/database/.ht.sqlite
 
 # Ignore log files
-log/*.log
+log/*
+!log/.gitkeep
 
 # Ignore vendor directories
 local/vendor

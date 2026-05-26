@@ -1,5 +1,5 @@
 # Run composer to install dependencies
-FROM composer:2 as composer
+FROM composer:2 AS composer
 WORKDIR /app/build-dependancies
 COPY ./build-dependancies /app/build-dependancies
 RUN composer install --no-dev --optimize-autoloader --no-interaction

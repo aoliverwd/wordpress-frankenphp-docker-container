@@ -22,7 +22,6 @@ RUN install-php-extensions \
 COPY --from=wp-core /usr/src/wordpress /app/public
 COPY --from=composer /app/build-dependancies /app/build-dependancies
 COPY --from=composer /app/build-dependancies/wp-content/plugins /app/public/wp-content/plugins
-COPY --from=composer /app/build-dependancies/plugins /app/public/wp-content/plugins
 
 # Copy Caddyfile and php.ini
 COPY ./config/Caddyfile /etc/frankenphp/Caddyfile
@@ -37,6 +36,14 @@ RUN mkdir -p "${WORDPRESS_TARGET_DIR}/wp-content/mu-plugins"
 # Move SQLite Database Integration plugin to mu-plugins
 RUN mv "${WORDPRESS_TARGET_DIR}/wp-content/plugins/sqlite-database-integration" "${WORDPRESS_TARGET_DIR}/wp-content/mu-plugins/sqlite-database-integration"
 
+# Install WP-CLI
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
+    && chmod +x wp-cli.phar \
+    && mv wp-cli.phar /usr/local/bin/wp
+
+# Unzip plugins, ignoring errors
+RUN unzip /app/build-dependancies/plugins/*.zip -d "${WORDPRESS_TARGET_DIR}/wp-content/plugins/" 2> /dev/null || true
+
 # Tidy up
 RUN rm -rf /app/build-dependancies/wp-content \
     && rm -rf /app/build-dependancies/plugins \
@@ -44,11 +51,6 @@ RUN rm -rf /app/build-dependancies/wp-content \
     && rm -rf /app/public/wp-content/themes/twentytwentythree \
     && rm -rf /app/public/wp-content/plugins/akismet \
     && rm /app/public/wp-content/plugins/hello.php
-
-# Install WP-CLI
-RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
-    && chmod +x wp-cli.phar \
-    && mv wp-cli.phar /usr/local/bin/wp
 
 # Set non-root user
 ARG USER=appuser

@@ -3,12 +3,18 @@
         "platform": {
             "php": "8.5"
         },
+        "preferred-install": {
+            "*": "dist"
+        },
         "allow-plugins": true
     },
     "require": {
         "php": ">=8.5",
         "composer/installers": "^2.3",
-        "wp-plugin/sqlite-database-integration": "^2.2"
+        "wp-plugin/sqlite-database-integration": "^2.2",
+        "wp-plugin/wordfence": "^8.2",
+        "wp-plugin/duplicate-post": "^4.6",
+        "wp-plugin/wordpress-seo": "^27.8"
     },
     "repositories": [
         {

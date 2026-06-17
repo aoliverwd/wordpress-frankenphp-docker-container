@@ -32,9 +32,7 @@ Once the container is running, open your browser and navigate to:
 https://localhost/
 ```
 
-## Notes
-
-- HTTPS is enabled via Caddy, so your browser may prompt a security warning on first access.
+---
 
 ## Managing WordPress Plugins
 
@@ -42,6 +40,14 @@ WordPress plugins are managed via wp-packages.org a composer based package manag
 
 Local plugin archives can be placed in `./build-dependancies/plugins` and will be installed into `./public/wp-content/plugins` during the build process.
 
+---
+
 ## Local Dependencies
 
 Local development dependency configuration files are located in the `./local` folder.
+
+---
+
+## HTTPS
+
+HTTPS is enabled via Caddy, so your browser may prompt a security warning on first access.

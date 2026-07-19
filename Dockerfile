@@ -8,7 +8,7 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 FROM wordpress:7.0-php8.5-fpm-alpine AS wp-core
 
 # Use dunglas/frankenphp as the base image
-FROM dunglas/frankenphp:1.12.4-php8-alpine
+FROM dunglas/frankenphp:1.12.5-php8-trixie
 
 # add additional extensions here:
 RUN install-php-extensions \
@@ -51,17 +51,3 @@ RUN rm -rf /app/build-dependancies/wp-content \
     && rm -rf /app/public/wp-content/themes/twentytwentythree \
     && rm -rf /app/public/wp-content/plugins/akismet \
     && rm /app/public/wp-content/plugins/hello.php
-
-# Set non-root user
-ARG USER=appuser
-
-RUN <<-EOF
-	# Use "adduser -D ${USER}" for alpine based distros
-	adduser -D ${USER}
-	# Add additional capability to bind to port 80 and 443
-	setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/frankenphp
-	# Give write access to /config/caddy and /data/caddy
-	chown -R ${USER}:${USER} /config/caddy /data/caddy
-EOF
-
-USER ${USER}

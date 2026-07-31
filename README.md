@@ -13,7 +13,7 @@ Follow these steps to spin up the development environment locally.
 Create your `.env` file from the provided template:
 
 ```bash
-cat env-test.txt > .env
+cat env.example > .env
 ```
 
 ### 2. Start the Docker Environment

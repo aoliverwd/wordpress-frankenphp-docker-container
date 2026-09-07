@@ -5,10 +5,10 @@ COPY ./build-dependancies /app/build-dependancies
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 # From WordPress core
-FROM wordpress:7.0-php8.5-fpm-alpine AS wp-core
+FROM wordpress:7.1-php8.5-fpm-alpine AS wp-core
 
 # Use dunglas/frankenphp as the base image
-FROM dunglas/frankenphp:1.12.5-php8-trixie
+FROM dunglas/frankenphp:1.12.7-php8-trixie
 
 # add additional extensions here:
 RUN install-php-extensions \

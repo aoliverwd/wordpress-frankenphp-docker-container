@@ -154,15 +154,15 @@
         },
         {
             "name": "wp-plugin/duplicate-post",
-            "version": "4.6",
+            "version": "4.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/duplicate-post/",
-                "reference": "tags/4.6"
+                "reference": "tags/4.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/duplicate-post.4.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/duplicate-post.4.7.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -181,7 +181,7 @@
                 "issues": "https://wordpress.org/support/plugin/duplicate-post",
                 "source": "https://plugins.svn.wordpress.org/duplicate-post"
             },
-            "time": "2026-06-15T14:30:54+00:00"
+            "time": "2026-08-18T14:06:30+00:00"
         },
         {
             "name": "wp-plugin/sqlite-database-integration",
@@ -205,13 +205,13 @@
                     "name": "WordPress.org"
                 }
             ],
-            "description": "SQLite integration plugin by the WordPress Team.",
+            "description": "Run WordPress on SQLite instead of MySQL or MariaDB.",
             "support": {
                 "changelog": "https://wordpress.org/plugins/sqlite-database-integration/#developers",
                 "issues": "https://wordpress.org/support/plugin/sqlite-database-integration",
                 "source": "https://plugins.svn.wordpress.org/sqlite-database-integration"
             },
-            "time": "2026-04-10T15:10:54+00:00"
+            "time": "2026-08-25T12:25:57+00:00"
         },
         {
             "name": "wp-plugin/wordfence",
@@ -242,19 +242,19 @@
                 "issues": "https://wordpress.org/support/plugin/wordfence",
                 "source": "https://plugins.svn.wordpress.org/wordfence"
             },
-            "time": "2026-05-13T15:46:44+00:00"
+            "time": "2026-08-10T16:26:14+00:00"
         },
         {
             "name": "wp-plugin/wordpress-seo",
-            "version": "27.8",
+            "version": "27.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/27.8"
+                "reference": "tags/27.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.27.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.27.9.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -266,14 +266,14 @@
                     "name": "Yoast"
                 }
             ],
-            "description": "Improve your SEO with real-time feedback, schema, and clear guidance. Upgrade for AI tools, Google Docs integration, and 24/7 support, no hidden fees.",
+            "description": "Real-time SEO guidance, schema, and AI built in. Help search engines and AI systems understand your content. All AI tools included, no hidden fees.",
             "homepage": "https://yoa.st/1uj",
             "support": {
                 "changelog": "https://wordpress.org/plugins/wordpress-seo/#developers",
                 "issues": "https://wordpress.org/support/plugin/wordpress-seo",
                 "source": "https://plugins.svn.wordpress.org/wordpress-seo"
             },
-            "time": "2026-06-10T07:51:02+00:00"
+            "time": "2026-09-03T13:06:31+00:00"
         }
     ],
     "packages-dev": [],

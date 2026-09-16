@@ -65,6 +65,3 @@ RUN <<-EOF
 EOF
 
 USER ${USER}
-
-# Set working directory
-WORKDIR /app/public

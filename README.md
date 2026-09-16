@@ -51,3 +51,13 @@ Local development dependency configuration files are located in the `./local` fo
 ## HTTPS
 
 HTTPS is enabled via Caddy, so your browser may prompt a security warning on first access.
+
+---
+
+## WordPress CLI
+
+You can run WordPress CLI commands using the `wp` alias:
+
+```bash
+docker compose exec wordpress wp
+```

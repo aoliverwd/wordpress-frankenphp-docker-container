@@ -51,3 +51,20 @@ RUN rm -rf /app/build-dependancies/wp-content \
     && rm -rf /app/public/wp-content/themes/twentytwentythree \
     && rm -rf /app/public/wp-content/plugins/akismet \
     && rm /app/public/wp-content/plugins/hello.php
+
+# Create a non-root user
+ARG USER=appuser
+
+RUN <<-EOF
+	# Use "adduser -D ${USER}" for alpine based distros
+	useradd ${USER}
+	# Remove default capability
+	setcap -r /usr/local/bin/frankenphp
+	# Give write access to /config/caddy and /data/caddy
+	chown -R ${USER}:${USER} /config/caddy /data/caddy
+EOF
+
+USER ${USER}
+
+# Set working directory
+WORKDIR /app/public

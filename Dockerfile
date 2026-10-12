@@ -30,6 +30,12 @@ COPY ./config/php.ini /usr/local/etc/php/php.ini
 ENV WORDPRESS_TARGET_DIR="/app/public"
 ENV SQLITE_DIR="${WORDPRESS_TARGET_DIR}/wp-content/mu-plugins/sqlite-database-integration"
 
+# Suppress deprecations for WP-CLI only
+ENV WP_CLI_PHP_ARGS="-d error_reporting=24575"
+
+# Ignore CLI pager
+ENV PAGER=cat
+
 # Make sure mu-plugins directory exists
 RUN mkdir -p "${WORDPRESS_TARGET_DIR}/wp-content/mu-plugins"
 
@@ -65,3 +71,5 @@ RUN <<-EOF
 EOF
 
 USER ${USER}
+
+WORKDIR ${WORDPRESS_TARGET_DIR}

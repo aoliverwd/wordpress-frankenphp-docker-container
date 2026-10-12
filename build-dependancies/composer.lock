@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "56f2508ecc97f28d7ab56604f115a466",
+    "content-hash": "8a46ed24506986fbdcf82e48a24ed803",
     "packages": [
         {
             "name": "composer/installers",
@@ -181,19 +181,19 @@
                 "issues": "https://wordpress.org/support/plugin/duplicate-post",
                 "source": "https://plugins.svn.wordpress.org/duplicate-post"
             },
-            "time": "2026-08-18T14:06:30+00:00"
+            "time": "2026-10-06T13:24:18+00:00"
         },
         {
             "name": "wp-plugin/sqlite-database-integration",
-            "version": "2.2.23",
+            "version": "3.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/sqlite-database-integration/",
-                "reference": "tags/2.2.23"
+                "reference": "tags/3.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/sqlite-database-integration.2.2.23.zip"
+                "url": "https://downloads.wordpress.org/plugin/sqlite-database-integration.3.1.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -205,25 +205,25 @@
                     "name": "WordPress.org"
                 }
             ],
-            "description": "Run WordPress on SQLite instead of MySQL or MariaDB.",
+            "description": "Run WordPress on SQLite.",
             "support": {
                 "changelog": "https://wordpress.org/plugins/sqlite-database-integration/#developers",
                 "issues": "https://wordpress.org/support/plugin/sqlite-database-integration",
                 "source": "https://plugins.svn.wordpress.org/sqlite-database-integration"
             },
-            "time": "2026-08-25T12:25:57+00:00"
+            "time": "2026-10-08T15:06:22+00:00"
         },
         {
             "name": "wp-plugin/wordfence",
-            "version": "8.2.2",
+            "version": "9.0.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordfence/",
-                "reference": "tags/8.2.2"
+                "reference": "tags/9.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordfence.8.2.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordfence.9.0.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -242,19 +242,19 @@
                 "issues": "https://wordpress.org/support/plugin/wordfence",
                 "source": "https://plugins.svn.wordpress.org/wordfence"
             },
-            "time": "2026-08-10T16:26:14+00:00"
+            "time": "2026-09-30T15:31:24+00:00"
         },
         {
             "name": "wp-plugin/wordpress-seo",
-            "version": "27.9",
+            "version": "28.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/27.9"
+                "reference": "tags/28.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.27.9.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.28.6.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -273,7 +273,7 @@
                 "issues": "https://wordpress.org/support/plugin/wordpress-seo",
                 "source": "https://plugins.svn.wordpress.org/wordpress-seo"
             },
-            "time": "2026-09-03T13:06:31+00:00"
+            "time": "2026-10-02T12:02:20+00:00"
         }
     ],
     "packages-dev": [],

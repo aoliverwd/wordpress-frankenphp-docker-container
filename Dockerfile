@@ -8,7 +8,7 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 FROM wordpress:7.1-php8.5-fpm-alpine AS wp-core
 
 # Use dunglas/frankenphp as the base image
-FROM dunglas/frankenphp:1.12.7-php8-trixie
+FROM dunglas/frankenphp:1.13-php8-trixie
 
 # add additional extensions here:
 RUN install-php-extensions \

@@ -35,6 +35,9 @@ ENV WP_CLI_PHP_ARGS="-d error_reporting=24575"
 
 # Ignore CLI pager
 ENV PAGER=cat
+# Or install less, terminal pager
+# RUN apt-get update && apt-get install -y --no-install-recommends less \
+#    && rm -rf /var/lib/apt/lists/*
 
 # Make sure mu-plugins directory exists
 RUN mkdir -p "${WORDPRESS_TARGET_DIR}/wp-content/mu-plugins"
@@ -46,9 +49,6 @@ RUN mv "${WORDPRESS_TARGET_DIR}/wp-content/plugins/sqlite-database-integration" 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x wp-cli.phar \
     && mv wp-cli.phar /usr/local/bin/wp
-
-# Unzip plugins, ignoring errors
-RUN unzip /app/build-dependancies/plugins/*.zip -d "${WORDPRESS_TARGET_DIR}/wp-content/plugins/" 2> /dev/null || true
 
 # Tidy up
 RUN rm -rf /app/build-dependancies/wp-content \
@@ -71,5 +71,3 @@ RUN <<-EOF
 EOF
 
 USER ${USER}
-
-WORKDIR ${WORDPRESS_TARGET_DIR}

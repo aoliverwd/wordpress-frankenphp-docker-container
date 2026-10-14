@@ -246,15 +246,15 @@
         },
         {
             "name": "wp-plugin/wordpress-seo",
-            "version": "28.6",
+            "version": "28.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/28.6"
+                "reference": "tags/28.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.28.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.28.7.zip"
             },
             "require": {
                 "composer/installers": "~1.0|~2.0"
@@ -273,7 +273,7 @@
                 "issues": "https://wordpress.org/support/plugin/wordpress-seo",
                 "source": "https://plugins.svn.wordpress.org/wordpress-seo"
             },
-            "time": "2026-10-02T12:02:20+00:00"
+            "time": "2026-10-13T08:57:15+00:00"
         }
     ],
     "packages-dev": [],
